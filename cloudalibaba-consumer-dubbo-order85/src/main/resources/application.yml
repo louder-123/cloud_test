@@ -1,0 +1,8 @@
+server:
+  port: 85
+
+spring:
+  application:
+    name: dubbo-consumer
+
+

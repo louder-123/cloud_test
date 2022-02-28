@@ -1,0 +1,17 @@
+server:
+  port: 9005
+
+spring:
+  application:
+    name: cloudalibaba-provider-payment
+  cloud:
+    nacos:
+      server-addr: localhost:8848
+
+dubbo:
+  scan:
+    base-packages: com.z1f.cloudalibaba.service.impl
+  protocol:
+    name: dubbo
+    port: 12345
+

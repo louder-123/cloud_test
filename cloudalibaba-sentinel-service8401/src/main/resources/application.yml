@@ -1,0 +1,51 @@
+#本服务用来测试sentinel的初始化监控功能，将自己交由sentinel监控
+server:
+  port: 8401
+
+spring:
+  application:
+    name: cloudalibaba-sentinel-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:
+      transport:
+        #配置sentinel dashboard的地址。意为这个地址监控本服务。 不建议使用默认的8080，端口被占用时会无法显示当前服务
+        #指定端口启动jar包方式：java -Dserver.port=8086 -Dcsp.sentinel.dashboard.server=localhost:8086 -jar sentinel-dashboard-1.8.3.jar
+        dashboard: localhost:8080
+        #默认8719端口 被占用会一次开始+1扫描，直到找到未被占用的接口
+        port: 8719
+          # sentinel流控规则持久化配置，这里存入nacos
+      datasource:
+        ds1: #数据源1
+          nacos:
+            server-addr: localhost:8848
+            dataId: ${spring.application.name} # spring.application.name
+            groupId: DEFAULT_GROUP
+            data_type: json
+            rule-type: flow
+
+#          [
+#             {
+#             "resource":"/rateLimit/byUrl",  资源名称
+#             "limitApp":"default",           来源应用
+#             "grade":1,                      阈值类型 0-线程数，1-QPS
+#             "count":1,                      单机阈值
+#             "strategy":                     0,流控模式 0-直接 1-关联 2-链路
+#             "controlBehavior":              0, 流控效果 0-快速失败 1-warm up 2-排队等待
+#             "clusterMode":false             是否集群
+#             }
+#          ]
+
+
+#actuator对项目的监控功能，向外暴露所有端点
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+feign:
+  sentinel:
+    enabled: true
