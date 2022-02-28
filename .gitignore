@@ -1,0 +1,17 @@
+# Project exclude paths
+/cloud-api-commons/target/
+/cloud-consumer-order/target/
+/cloud-eureka-server/target/
+/cloud-eureka-server2/target/
+/cloud-gateway-gateway9527/target/
+/cloud-provider-payment/target/
+/cloudalibaba-comsumer-nacos-order83/target/
+/cloudalibaba-config-nacos-client3377/target/
+/cloudalibaba-consumer-dubbo-order85/target/
+/cloudalibaba-consumer-nacos-order84/target/
+/cloudalibaba-provider-payment9001/target/
+/cloudalibaba-provider-payment9002/target/
+/cloudalibaba-provider-payment9003/target/
+/cloudalibaba-provider-payment9004/target/
+/cloudalibaba-provider-payment-dubbo9005/target/
+/cloudalibaba-sentinel-service8401/target/
