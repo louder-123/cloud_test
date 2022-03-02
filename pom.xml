@@ -23,10 +23,9 @@
         <module>cloudalibaba-provider-payment9004</module>
         <module>cloudalibaba-consumer-nacos-order84</module>
         <module>cloud-gateway-gateway9527</module>
-        <module>cloudalibaba-dubbo-provider9005</module>
-        <module>cloudalibaba-provider-dubbo-payment9005</module>
         <module>cloudalibaba-provider-payment-dubbo9005</module>
         <module>cloudalibaba-consumer-dubbo-order85</module>
+        <module>boot-test</module>
     </modules>
 
     <!--统一管理jar包版本-->
